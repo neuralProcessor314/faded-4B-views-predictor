@@ -1,4 +1,4 @@
-*You were the shadow of my light* \
+*You were the shadow of my light*  
 **ALAN WALKER - FADED**
 
 # Overview
@@ -15,15 +15,20 @@ I visit YouTube at random times to check how much views *Faded* has at that mome
 |10|18|11|3980917788|11|
 |...|...|...|...|...|
 
-Where:
+Where,  
+
 time(D)
 : The date part of the timestamp. All entries in June as of June 26, 2026. 
+
 time(H)
 : The hour part of the timestamp. 0~23.
+
 time(M)
 : The minute part of the timestamp.
+
 views
 : view count as of the timestamp.
+
 timeSinceRef
 : time elapsed since June 10, 2026 18:00. Deprecated.
 
