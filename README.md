@@ -13,6 +13,7 @@ I visit YouTube at random times to check how much views *Faded* has at that mome
 |time(D)|time(H)|time(M)|views|timeSinceRef|
 |-------|-------|-------|-----|------------|
 |10|18|11|3980917788|11|
+
 ...
 Where:
 time(D)
@@ -33,9 +34,9 @@ Using the Google Sheets API, fetch.py fetches the current sheet and stores the D
 
 ## Regress!
 Using scipy, main.py ~~performs~~ will perform a multivariable regression with the following model:
-> a<sub>1</sub>sin(a<sub>2</sub>x + b<sub>1</sub>) + a<sub>3</sub>sin(a<sub>4</sub>x + b<sub>2</sub>) + a<sub>5</sub>`*`exp(a<sub>6</sub>x) + a<sub>7</sub>`*`x<sup>2</sup> + a<sub>8</sub>`x` + b<sub>3</sub>
+> a<sub>1</sub>sin(a<sub>2</sub>x + b<sub>1</sub>) + a<sub>3</sub>sin(a<sub>4</sub>x + b<sub>2</sub>) + a<sub>5</sub>exp(a<sub>6</sub>x) + a<sub>7</sub>x<sup>2</sup> + a<sub>8</sub> + b<sub>3</sub>
 
-The two sins account for the periodic fluctuation related to the time of the day/week. Exponential accounts for the gradual increase in popularity due to *Faded*'s views getting closer to 4 billion. Added x^2^ because it works similar to the exponential. x accounts for the constant baseline rate. And the bias exists too.
+The two sins account for the periodic fluctuation related to the time of the day/week. Exponential accounts for the gradual increase in popularity due to *Faded*'s views getting closer to 4 billion. Added x<sup>2</sup> because it works similar to the exponential. x accounts for the constant baseline rate. And the bias exists too.
 
 ## Visualizing Results
 Will use matplotllib. To be added.
