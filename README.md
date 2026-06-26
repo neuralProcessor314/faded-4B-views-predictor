@@ -9,7 +9,7 @@ Why did I made this?
 
 # How it works
 ## Recording Views
-I visit YouTube at random times to check how much views *Faded* has at that moment. As it is impractical and meaningless to record the time down to the precise seconds, I cut the seconds and write times down to minutes on my Google Sheet. As of June 2026, the sheet has the following structure:
+I visit YouTube at random times to check how much views *Faded* has at that moment. As it is impractical and meaningless to record the time down to the precise seconds, I cut the seconds and write times down to minutes on my Google Sheets spreadsheet. As of June 2026, the sheet has the following structure:
 |time(D)|time(H)|time(M)|views|timeSinceRef|
 |-------|-------|-------|-----|------------|
 |10|18|11|3980917788|11|

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Modified by neuralProcessor314
-# Copyright 2026 neuralProcessor314
+# Copyright 2026 neuralProcessor314. GNU GPLv3.0
 
 import os.path
 
@@ -23,7 +23,9 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
+import pandas as pd
+
+# If modifying these scopes, delete the file do_not_push/token.json.
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 
 # ID and Range
@@ -33,22 +35,22 @@ SAMPLE_RANGE_NAME = "A2:D"
 
 def main():
   creds = None
-  # The file token.json stores the user's access and refresh tokens, and is
+  # The file do_not_push/token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
   # time.
-  if os.path.exists("token.json"):
-    creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+  if os.path.exists("do_not_push/token.json"):
+    creds = Credentials.from_authorized_user_file("do_not_push/token.json", SCOPES)
   # If there are no (valid) credentials available, let the user log in.
   if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
     else:
       flow = InstalledAppFlow.from_client_secrets_file(
-          "credentials.json", SCOPES
+          "do_not_push/credentials.json", SCOPES
       )
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open("token.json", "w") as token:
+    with open("do_not_push/token.json", "w") as token:
       token.write(creds.to_json())
 
   try:
@@ -67,10 +69,10 @@ def main():
       print("No data found.")
       return
 
-    print("D, H, M, views:")
-    for row in values:
-      # Print columns A and E, which correspond to indices 0 and 4.
-      print(str(row[0]), str(row[1]), str(row[2]), str(row[3]))
+    # print("D, H, M, views:")
+    # for row in values:
+    #   # Print columns A and E, which correspond to indices 0 and 4.
+    #   print(str(row[0]), str(row[1]), str(row[2]), str(row[3]))
 
   except HttpError as err:
     print(err)
