@@ -1,11 +1,11 @@
-*You were the shadow of my light*
+*You were the shadow of my light* \
 **ALAN WALKER - FADED**
 
 # Overview
 A machine learning script to predict the time at which Alan Walker's Faded would hit four billion views on YouTube. NO AI SLOP :D
 
-# Why Did I Made This?
-FADED'S GONNA HIT A WHOLE FOUR BILLION VIEWS SOON AND I WANT TO PREDICT WHEN IT IS, SO THAT I CAN CELEBRATE! THAT'S ALL.
+Why did I made this?
+- FADED'S GONNA HIT A WHOLE FOUR BILLION VIEWS SOON AND I WANT TO PREDICT WHEN IT IS, SO THAT I CAN CELEBRATE! THAT'S ALL.
 
 # How it works
 ## Recording Views
@@ -13,8 +13,8 @@ I visit YouTube at random times to check how much views *Faded* has at that mome
 |time(D)|time(H)|time(M)|views|timeSinceRef|
 |-------|-------|-------|-----|------------|
 |10|18|11|3980917788|11|
+|...|...|...|...|...|
 
-...
 Where:
 time(D)
 : The date part of the timestamp. All entries in June as of June 26, 2026. 
