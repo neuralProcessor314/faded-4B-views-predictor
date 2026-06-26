@@ -60,5 +60,6 @@ Yes, it has a CLI! To be added.
 - [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts)
 - [Markdown Guide's cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 - [Choose a License](https://choosealicense.com/)
+- [Pandas API Reference](https://pandas.pydata.org/pandas-docs/stable/reference/)
 - ...and many Stack Overflow answers of course.
 
