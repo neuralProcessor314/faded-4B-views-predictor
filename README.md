@@ -17,20 +17,20 @@ I visit YouTube at random times to check how much views *Faded* has at that mome
 
 Where,  
 <dl>
-    <dt>time(D)</dt>
-    <dd>The date part of the timestamp. All entries in June as of June 26, 2026.</dd>
+<dt>time(D)</dt>
+<dd>The date part of the timestamp. All entries in June as of June 26, 2026.</dd>
 
-    <dt>time(H)</dt>
-    <dd>The hour part of the timestamp. 0~23.</dd>
+<dt>time(H)</dt>
+<dd>The hour part of the timestamp. 0~23.</dd>
 
-    <dt>time(M)</dt>
-    <dd>The minute part of the timestamp.</dd>
+<dt>time(M)</dt>
+<dd>The minute part of the timestamp.</dd>
 
-    <dt>views</dt>
-    <dd>view count as of the timestamp.</dd>
+<dt>views</dt>
+<dd>view count as of the timestamp.</dd>
 
-    <dt>timeSinceRef</dt>
-    <dd>time elapsed since June 10, 2026 18:00. Deprecated.</dd>
+<dt>timeSinceRef</dt>
+<dd>time elapsed since June 10, 2026 18:00. Deprecated.</dd>
 </dl>
 All times are in KST(UTC+9).
 
