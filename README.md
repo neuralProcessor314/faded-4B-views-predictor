@@ -61,5 +61,6 @@ Yes, it has a CLI! To be added.
 - [Markdown Guide's cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 - [Choose a License](https://choosealicense.com/)
 - [Pandas API Reference](https://pandas.pydata.org/pandas-docs/stable/reference/)
+- [Python 3.14.6 Documentation](https://docs.python.org/3/)
 - ...and many Stack Overflow answers of course.
 
