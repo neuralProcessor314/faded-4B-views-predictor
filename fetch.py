@@ -37,7 +37,7 @@ def main():
   creds = None
   # The file do_not_push/token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first time.
-  print("checking for credentials...")
+  print("checking for credentials...", end=' ')
   if os.path.exists("do_not_push/token.json"):
     creds = Credentials.from_authorized_user_file("do_not_push/token.json", SCOPES)
 
@@ -56,20 +56,20 @@ def main():
       token.write(creds.to_json())
 
   else:
-    print("OK.")
+    print("complete.")
 
   try:
     service = build("sheets", "v4", credentials=creds)
 
     # Call the Sheets API
-    print("fetching...")
+    print("fetching...", end=' ')
     sheet = service.spreadsheets()
     result = (
         sheet.values()
         .get(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME)
         .execute()
     )
-    print("fetching complete.")
+    print("complete.")
     values = result.get("values", [])
     if not values:
       print("No data found.")
@@ -81,7 +81,7 @@ def main():
 
     values = pd.DataFrame(values)
     values.to_csv("data/data.csv", index=False)
-    print("CSV saved.")
+    print("saved CSV.")
 
   except HttpError as err:
     print(err)
