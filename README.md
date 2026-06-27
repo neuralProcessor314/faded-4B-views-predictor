@@ -66,10 +66,15 @@ Will use matplotllib. To be added.
 Yes, it has a CLI! To be added.
 
 # Dependencies
-- google-api-python-client
-- google-auth-httplib2
-- google-auth-oauthlib
-- scipy
+- googleapiclient
+- google.auth.transport.requests
+- google.oauth2.credentials
+- google_auth_oauthlib
+- matplotlib.pyplot
+- numpy
+- os
+- pandas
+- scipy.optimize
 
 
 # References
