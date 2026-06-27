@@ -49,7 +49,7 @@ Where,
 <dt>exponential(DELETED)</dt>
 <dd>accounts for the gradual increase in popularity due to Faded's views getting closer to 4 billion. Deleted as I couldn't manage to make it converge.</dd>
 
-<dt>x^2^</dt>
+<dt>x squared</dt>
 <dd>because it looks similar to the exponential.</dd>
 
 <dt>x</dt>
