@@ -30,7 +30,7 @@ Where,
 <dd>view count as of the timestamp.</dd>
 
 <dt>timeSinceRef</dt>
-<dd>time elapsed since June 10, 2026 18:00. Deprecated; The current reference time is June 10, 2026 18:11.</dd>
+<dd>time elapsed since June 10, 2026 18:00. Deprecated; Although the current reference time is identical, the dhm-to-minutes conversion is done locally.</dd>
 </dl>
 All times are in KST(UTC+9).
 
@@ -56,7 +56,7 @@ Where,
 <dd>constant baseline rate</dd>
 
 <dt>3980917788</dt>
-<dd>viewcount at June 10, 2026 18:11 UTC+9, which is the reference time.</dd>
+<dd>viewcount at June 10, 2026 18:00 UTC+9, which is the reference time.</dd>
 </dl>
 
 ### Visualizing Results
