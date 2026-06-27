@@ -85,5 +85,6 @@ Yes, it has a CLI! To be added.
 - [Python 3.14.6 Documentation](https://docs.python.org/3/)
 - [SciPy API Reference](https://docs.scipy.org/doc/scipy/reference/)
 - [Numberphile's Video](https://www.youtube.com/watch?v=oIkhgagvrjI)
+- [Pandas User Guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/)
 - ...and many Stack Overflow answers of course.
 
