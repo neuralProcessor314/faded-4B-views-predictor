@@ -14,6 +14,6 @@ time_tot = to_mins(time_d, time_h, time_m)
 
 # FITTING AND SAVING
 print("Fitting.")
-params = pd.DataFrame(optimize.curve_fit(pred_func, time_tot, views)[0])
+params = pd.DataFrame(optimize.curve_fit(pred_func, time_tot, views, maxfev=int(input()))[0])
 params.to_csv(save_dir)
 print("Saved params at " + save_dir + '.')
