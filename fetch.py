@@ -32,18 +32,18 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 SAMPLE_SPREADSHEET_ID = "10oMAHaOk_tala3QCmmssSQb_c1B-DWhfEEvswbiJ6eo"
 SAMPLE_RANGE_NAME = "A2:D"
 
+save_dir = "data/raw_data.csv"
 
 def main():
   creds = None
   # The file do_not_push/token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first time.
-  print("checking for credentials...", end=' ')
+  print("Checking for credentials.")
   if os.path.exists("do_not_push/token.json"):
     creds = Credentials.from_authorized_user_file("do_not_push/token.json", SCOPES)
 
   # If there are no (valid) credentials available, let the user log in.
   if not creds or not creds.valid:
-    print("no valid credentials. opening log-in prompt...")
     if creds and creds.expired and creds.refresh_token:
       creds.refresh(Request())
     else:
@@ -55,21 +55,18 @@ def main():
     with open("do_not_push/token.json", "w") as token:
       token.write(creds.to_json())
 
-  else:
-    print("complete.")
-
   try:
     service = build("sheets", "v4", credentials=creds)
 
     # Call the Sheets API
-    print("fetching...", end=' ')
+    print("Fetching.")
     sheet = service.spreadsheets()
     result = (
         sheet.values()
         .get(spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME)
         .execute()
     )
-    print("complete.")
+
     values = result.get("values", [])
     if not values:
       print("No data found.")
@@ -80,8 +77,8 @@ def main():
     #   print(str(row[0]), str(row[1]), str(row[2]), str(row[3]))
 
     values = pd.DataFrame(values)
-    values.to_csv("data/raw_data.csv", index=False)
-    print("saved CSV.")
+    values.to_csv(save_dir, index=False)
+    print("Saved data at " + save_dir + '.')
 
   except HttpError as err:
     print(err)
