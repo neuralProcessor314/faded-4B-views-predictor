@@ -60,10 +60,17 @@ Where,
 </dl>
 
 ### Visualizing Results
-Will use matplotllib. To be added.
+Used matplotlib. Shows the viewcount from June 10, 2026 18:11 to latest.
 
 ### CLI
-Yes, it has a CLI! To be added.
+The CLI is marked as, 'f4vp-CLI>'. It currently has the following commands:
+TBA
+
+### configs.cfg
+configs.cfg is where all the settings live. Initially intended to incorporate arguments to set values such as the max iterations for curve_fit, but I couldn't figure out a way to start a python process while inputting something there, so I decided to go for a separate configurations file. It includes the following configuration options:
+TBA
+
+### do_not_push
 
 ## Dependencies
 - googleapiclient
@@ -72,10 +79,9 @@ Yes, it has a CLI! To be added.
 - google_auth_oauthlib
 - matplotlib.pyplot
 - numpy
-- os
 - pandas
 - scipy.optimize
-
+- subprocess
 
 ## References
 - [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts)
