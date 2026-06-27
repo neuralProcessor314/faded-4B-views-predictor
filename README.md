@@ -1,14 +1,14 @@
 *You were the shadow of my light*  
 **ALAN WALKER - FADED**
 
-# Overview
+## Overview
 A machine learning script to predict the time at which Alan Walker's Faded would hit four billion views on YouTube. NO AI SLOP :D
 
 Why did I made this?
 - FADED'S GONNA HIT A WHOLE FOUR BILLION VIEWS SOON AND I WANT TO PREDICT WHEN IT IS, SO THAT I CAN CELEBRATE! THAT'S ALL.
 
-# How it works
-## Recording Views
+## How it works
+### Recording Views
 I visit YouTube at random times to check how much views *Faded* has at that moment. As it is impractical and meaningless to record the time down to the precise seconds, I cut the seconds and write times down to minutes on my Google Sheets spreadsheet. As of June 2026, the sheet has the following structure:
 |time(D)|time(H)|time(M)|views|timeSinceRef|
 |-------|-------|-------|-----|------------|
@@ -34,10 +34,10 @@ Where,
 </dl>
 All times are in KST(UTC+9).
 
-## Fetching Data
+### Fetching Data
 Using the Google Sheets API, fetch.py fetches the current sheet and stores the D/H/M/views columns in .csv format. The code is heavily based on the example in [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts).
 
-## Regress!
+### Regress!
 Using scipy, main.py performs a multivariable regression with the following model:
 > a<sub>1</sub>sin(omega<sub>1</sub>x + b<sub>1</sub>) + a<sub>2</sub>sin(omega<sub>2</sub>x + b<sub>2</sub>) + a<sub>3</sub>x<sup>2</sup> + a<sub>4</sub> + 3980917788
 
@@ -59,13 +59,13 @@ Where,
 <dd>viewcount at June 10, 2026 18:11 UTC+9, which is the reference time.</dd>
 </dl>
 
-## Visualizing Results
+### Visualizing Results
 Will use matplotllib. To be added.
 
-## CLI
+### CLI
 Yes, it has a CLI! To be added.
 
-# Dependencies
+## Dependencies
 - googleapiclient
 - google.auth.transport.requests
 - google.oauth2.credentials
@@ -77,7 +77,7 @@ Yes, it has a CLI! To be added.
 - scipy.optimize
 
 
-# References
+## References
 - [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts)
 - [Markdown Guide's cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 - [Choose a License](https://choosealicense.com/)
