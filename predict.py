@@ -17,10 +17,10 @@ views = raw_data.iloc[:, 3]
 
 
 # FITTING
-def pred_func(x, a1, a2, a3, a4, a5, a6, b1, b2):
+def pred_func(x, a1, a2, a3, a4, b1, b2):
     omega_1 = 2 * np.pi / 1440  # 1-day = 1440-min period
     omega_2 = 2 * np.pi / 10080  # 1-week = 10080-min period
-    return a1*np.sin(omega_1*x + b1) + a2*np.sin(omega_2*x+b2) + a3*x + a4*np.square(x) + 0.000001*a5*np.exp(a6*x) + 3980917788
+    return a1*np.sin(omega_1*x + b1) + a2*np.sin(omega_2*x+b2) + a3*x + a4*np.square(x) + 3980917788
 
 
 print(optimize.curve_fit(pred_func, time_tot, views))
