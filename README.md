@@ -46,8 +46,8 @@ Where,
 <dt>two sins</dt>
 <dd>account for the periodic fluctuation related to the time of the day/week. UPDATE: now has fixed angular velocities, omega_1 and omega_2, to force them to work as desired.</dd>
 
-<dt>~~exponential~~(DELETED)</dt>
-<dd>accounts for the gradual increase in popularity due to *Faded*'s views getting closer to 4 billion. Deleted as I couldn't manage to make it converge.</dd>
+<dt>exponential(DELETED)</dt>
+<dd>accounts for the gradual increase in popularity due to Faded's views getting closer to 4 billion. Deleted as I couldn't manage to make it converge.</dd>
 
 <dt>x^2^</dt>
 <dd>because it looks similar to the exponential.</dd>
