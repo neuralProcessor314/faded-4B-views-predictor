@@ -6,7 +6,7 @@ from funcs import to_mins, pred_func, load_data
 # LOADING
 print("Loading params.")
 params = pd.read_csv("params/pred_params.csv")
-[a1p, a2p, a3p, a4p, b1p, b2p] = [params.iloc[i, 1] for i in range(6)]
+[a1p, a2p, a3p, a4p, b1p, b2p, b3p] = [params.iloc[i, 1] for i in range(7)]
 
 print("Loading and preprocessing data.")
 raw_data, time_d, time_h, time_m, views = load_data()
@@ -16,7 +16,7 @@ time_tot = to_mins(time_d, time_h, time_m)
 
 # PREPPING PRED FUNC PLOT
 x_space = np.linspace(min(time_tot), max(time_tot), 500)
-y_space = pred_func(x_space, a1p, a2p, a3p, a4p, b1p, b2p)
+y_space = pred_func(x_space, a1p, a2p, a3p, a4p, b1p, b2p, b3p)
 
 # DRAWING
 print("Drawing.")

@@ -39,7 +39,7 @@ Using the Google Sheets API, fetch.py fetches the current sheet and stores the D
 
 ### Regress!
 Using scipy, main.py performs a multivariable regression with the following model:
-> a<sub>1</sub>sin(omega<sub>1</sub>x + b<sub>1</sub>) + a<sub>2</sub>sin(omega<sub>2</sub>x + b<sub>2</sub>) + a<sub>3</sub>x<sup>2</sup> + a<sub>4</sub> + 3980917788
+> a<sub>1</sub>sin(omega<sub>1</sub>x + b<sub>1</sub>) + a<sub>2</sub>sin(omega<sub>2</sub>x + b<sub>2</sub>) + a<sub>3</sub>x<sup>2</sup> + a<sub>4</sub> + b3
 
 Where,  
 <dl>
@@ -55,8 +55,8 @@ Where,
 <dt>x</dt>
 <dd>constant baseline rate</dd>
 
-<dt>3980917788</dt>
-<dd>viewcount at June 10, 2026 18:00 UTC+9, which is the reference time.</dd>
+<dt>b3</dt>
+<dd>Bias; since the reference minute changed from June 10 2026 18:11 to 18:00(because of an error saying max function ref exceeded 1400), the viewcount at 18:11 couldn't be used as before.</dd>
 </dl>
 
 ### Visualizing Results
