@@ -80,7 +80,7 @@ def main():
     #   print(str(row[0]), str(row[1]), str(row[2]), str(row[3]))
 
     values = pd.DataFrame(values)
-    values.to_csv("data/data.csv", index=False)
+    values.to_csv("data/raw_data.csv", index=False)
     print("saved CSV.")
 
   except HttpError as err:

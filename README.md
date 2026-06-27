@@ -62,5 +62,6 @@ Yes, it has a CLI! To be added.
 - [Choose a License](https://choosealicense.com/)
 - [Pandas API Reference](https://pandas.pydata.org/pandas-docs/stable/reference/)
 - [Python 3.14.6 Documentation](https://docs.python.org/3/)
+- [SciPy API Reference](https://docs.scipy.org/doc/scipy/reference/)
 - ...and many Stack Overflow answers of course.
 
