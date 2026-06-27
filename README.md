@@ -30,7 +30,7 @@ Where,
 <dd>view count as of the timestamp.</dd>
 
 <dt>timeSinceRef</dt>
-<dd>time elapsed since June 10, 2026 18:00. Deprecated.</dd>
+<dd>time elapsed since June 10, 2026 18:00. Deprecated; The current reference time is June 10, 2026 18:11.</dd>
 </dl>
 All times are in KST(UTC+9).
 
@@ -38,10 +38,26 @@ All times are in KST(UTC+9).
 Using the Google Sheets API, fetch.py fetches the current sheet and stores the D/H/M/views columns in .csv format. The code is heavily based on the example in [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts).
 
 ## Regress!
-Using scipy, main.py ~~performs~~ will perform a multivariable regression with the following model:
-> a<sub>1</sub>sin(a<sub>2</sub>x + b<sub>1</sub>) + a<sub>3</sub>sin(a<sub>4</sub>x + b<sub>2</sub>) + a<sub>5</sub>exp(a<sub>6</sub>x) + a<sub>7</sub>x<sup>2</sup> + a<sub>8</sub> + b<sub>3</sub>
+Using scipy, main.py performs a multivariable regression with the following model:
+> a<sub>1</sub>sin(omega<sub>1</sub>x + b<sub>1</sub>) + a<sub>2</sub>sin(omega<sub>2</sub>x + b<sub>2</sub>) + a<sub>3</sub>x<sup>2</sup> + a<sub>4</sub> + 3980917788
 
-The two sins account for the periodic fluctuation related to the time of the day/week. Exponential accounts for the gradual increase in popularity due to *Faded*'s views getting closer to 4 billion. Added x<sup>2</sup> because it works similar to the exponential. x accounts for the constant baseline rate. And the bias exists too.
+Where,  
+<dl>
+<dt>two sins</dt>
+<dd>account for the periodic fluctuation related to the time of the day/week. UPDATE: now has fixed angular velocities, omega_1 and omega_2, to force them to work as desired.</dd>
+
+<dt>~~exponential~~(DELETED)</dt>
+<dd>accounts for the gradual increase in popularity due to *Faded*'s views getting closer to 4 billion. Deleted as I couldn't manage to make it converge.</dd>
+
+<dt>x^2^</dt>
+<dd>because it looks similar to the exponential.</dd>
+
+<dt>x</dt>
+<dd>constant baseline rate</dd>
+
+<dt>3980917788</dt>
+<dd>viewcount at June 10, 2026 18:11 UTC+9, which is the reference time.</dd>
+</dl>
 
 ## Visualizing Results
 Will use matplotllib. To be added.
