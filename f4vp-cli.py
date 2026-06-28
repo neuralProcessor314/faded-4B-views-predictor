@@ -9,7 +9,7 @@ while True:
     if cmd[0] == 'fetch':
         subprocess.run(["py", "fetch.py"])
     elif cmd[0] == 'predict':
-        subprocess.run(["py", "predict.py"])
+        subprocess.run(["py", "fit.py"])
     elif cmd[0] == 'show':
         subprocess.run(["py", "visualize.py"])
 
@@ -30,7 +30,7 @@ while True:
 
     elif cmd[0] == '?' or  cmd[0] == 'help':
         usages = pd.read_csv("usages.csv", index_col=0) # load the usage helps file.
-        try: print(usages.loc[cmd[1],"."])
+        try: print(usages.loc[cmd[1],"."]) # . is the column name.
         except IndexError: # if cmd[1] does not exist; i.e. when no additional arguments  provided.
             print('')
             for i in range(usages.shape[0]): print(usages.iloc[i,0])

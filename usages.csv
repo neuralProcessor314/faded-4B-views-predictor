@@ -1,6 +1,6 @@
 ,.
 fetch,fetch             : run fetch.py to fetch data from the sheet then write to data/raw_data.csv.
-predict,predict           : run predict.py to fit the function to the data.
+fit,fit               : run fit.py to fit the function to the data.
 show,show              : run visualize.py to show a plot of the data and the preds.
 get,get <none_or_cfg> : show the value of a configuration entry. if unspecified show all.
 set,set <cfg> <value> : set the value of a configuration entry.
