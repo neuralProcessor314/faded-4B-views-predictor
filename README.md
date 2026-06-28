@@ -65,7 +65,7 @@ Used matplotlib. Shows the viewcount from June 10, 2026 18:11 to latest.
 ## Other Features
 
 ### CLI
-'f4vp-CLI>' is the prompt of the CLI. It currently has the following commands:
+f4vp-cli.py hosts the CLI. The CLI currently supports the following commands:
 <dl>
 <dt>fetch</dt>
 <dd>run fetch.py to fetch data from the sheet then write to data/raw_data.csv.</dd>
