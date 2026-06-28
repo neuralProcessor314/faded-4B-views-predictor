@@ -38,7 +38,7 @@ All times are in KST(UTC+9).
 Using the Google Sheets API, fetch.py fetches the current sheet and stores the D/H/M/views columns in .csv format. The code is heavily based on the example in [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts).
 
 ### Regress!
-Using scipy, main.py performs a multivariable regression with the following model:
+Using scipy, fit.py performs a multivariable regression with the following model:
 > a<sub>1</sub>sin(omega<sub>1</sub>x + b<sub>1</sub>) + a<sub>2</sub>sin(omega<sub>2</sub>x + b<sub>2</sub>) + a<sub>3</sub>x<sup>2</sup> + a<sub>4</sub> + 3980917788
 
 Where,  
@@ -62,15 +62,36 @@ Where,
 ### Visualizing Results
 Used matplotlib. Shows the viewcount from June 10, 2026 18:11 to latest.
 
-### CLI
-The CLI is marked as, 'f4vp-CLI>'. It currently has the following commands:
-TBA
+## Other Features
 
-### configs.cfg
-configs.cfg is where all the settings live. Initially intended to incorporate arguments to set values such as the max iterations for curve_fit, but I couldn't figure out a way to start a python process while inputting something there, so I decided to go for a separate configurations file. It includes the following configuration options:
+### CLI
+'f4vp-CLI>' is the prompt of the CLI. It currently has the following commands:
+<dl>
+<dt>fetch</dt>
+<dd>run fetch.py to fetch data from the sheet then write to data/raw_data.csv.</dd>
+<dt>fit</dt>
+<dd>run fit.py to fit the function to the data.</dd>
+<dt>show</dt>
+<dd>run visualize.py to show a plot of the data and the preds.</dd>
+<dt>get</dt>
+<dd>show the value of a configuration entry. if unspecified show all.</dd>
+<dt>set</dt>
+<dd>set the value of a configuration entry.</dd>
+<dt>?, help</dt>
+<dd>show help for a given command. if unspecified show all.</dd>
+<dt>exit, quit, seeyou, seeya</dt>
+<dd>exit the CLI.</dd>
+</dl>
+
+### configs.csv
+configs.csv is where all the settings live. Initially intended to incorporate arguments to set values such as the max iterations for curve_fit, but I couldn't figure out a way to start a python process while inputting something there, so I decided to go for a separate configurations file. It includes the following configuration options:
 TBA
 
 ### do_not_push
+You may have seen this folder attributed in some of the codes. Inside there is the API information including client secret, etc. As it should not be leaked online, the content is stored locally in the developer's computer, and the folder is included in .gitignore.
+
+### usages.csv
+usages.csv includes the contents that *help* or *?* will output.
 
 ## Dependencies
 - googleapiclient

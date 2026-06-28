@@ -6,3 +6,7 @@ get,get <none_or_cfg> : show the value of a configuration entry. if unspecified 
 set,set <cfg> <value> : set the value of a configuration entry.
 ?,? <none_or_cmd>   : show help for a given command. if unspecified show all.
 help,help <none_or_cmd>: show help for a given command. if unspecified show all.
+exit,exit              : exit the CLI.
+quit,quit              : exit the CLI.
+seeyou,seeyou            : exit the CLI.
+seeya,seeya             : exit the CLI.
