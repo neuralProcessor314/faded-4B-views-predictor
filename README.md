@@ -56,7 +56,7 @@ Where,
 <dd>constant baseline rate</dd>
 
 <dt>3980917788</dt>
-<dd>viewcount at June 10, 2026 18:11 UTC+9, which is pretty close to the reference time and can be approximated, considering [YouTube's viewcount updates are not immediate](https://www.youtube.com/watch?v=oIkhgagvrjI).</dd>
+<dd>viewcount at June 10, 2026 18:11 UTC+9, which is pretty close to the reference time and can be approximated, considering YouTube's viewcount updates are not immediate; See https://www.youtube.com/watch?v=oIkhgagvrjI.</dd>
 </dl>
 
 ### Visualizing Results
