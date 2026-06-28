@@ -24,6 +24,7 @@ while True:
         cfg_name = cmd[1]                                              # and shows some errors cuz cfg_val is str.
         cfg_val = cmd[2]
         configs.loc[cfg_name, "value"] = cfg_val
+        print(configs.loc[cfg_name, "value"])p
         configs.to_csv("configs.csv")
 
     elif cmd[0] == '?' or  cmd[0] == 'help':
