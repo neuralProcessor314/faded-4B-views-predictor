@@ -8,7 +8,7 @@ while True:
 
     if cmd[0] == 'fetch':
         subprocess.run(["py", "fetch.py"])
-    elif cmd[0] == 'predict':
+    elif cmd[0] == 'fit':
         subprocess.run(["py", "fit.py"])
     elif cmd[0] == 'show':
         subprocess.run(["py", "visualize.py"])
