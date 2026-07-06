@@ -1,7 +1,7 @@
 import pandas as pd
 from scipy import optimize # originally used 'from scipy.optimize import curve_fit' but the official guidelines says
                            # to import like this
-from funcs import pred_func, load_data, load_cfg, to_mins
+from funcs import pred_func, load_data, load_cfgs, to_mins
 
 save_dir = "params/pred_params.csv"
 
@@ -14,11 +14,11 @@ time_tot = to_mins(time_d, time_h, time_m)
 
 # LOADING CFGS
 print("Loading configurations.")
-iters = int(load_cfg().loc["iters", "value"])
-if iters == 0: iters = 500
+max_iters = int(load_cfgs().loc["max_iters", "value"])
+if max_iters == 0: max_iters = 500
 
 # FITTING AND SAVING
 print("Fitting.")
-params = pd.DataFrame(optimize.curve_fit(pred_func, time_tot, views, maxfev=iters)[0])
+params = pd.DataFrame(optimize.curve_fit(pred_func, time_tot, views, maxfev=max_iters)[0])
 params.to_csv(save_dir)
 print("Saved params at " + save_dir + '.')

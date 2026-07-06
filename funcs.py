@@ -28,5 +28,5 @@ def load_data():
 
     return raw_data, time_d, time_h, time_m, views
 
-def load_cfg():
+def load_cfgs():
     return pd.read_csv("configs.csv", index_col=0) # index_col=0 makes the func read the first column as indexes.
