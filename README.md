@@ -147,5 +147,6 @@ note that the function names are *indexes*, not entries.
 - [SciPy API Reference](https://docs.scipy.org/doc/scipy/reference/)
 - [Numberphile's Video](https://www.youtube.com/watch?v=oIkhgagvrjI)
 - [Pandas User Guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/)
+- [Using Matplotlib](https://matplotlib.org/stable/users/index.html)
 - ...and many Stack Overflow answers of course.
 

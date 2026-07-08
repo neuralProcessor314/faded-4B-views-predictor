@@ -3,8 +3,8 @@ max_iters,5000
 pred_start,0
 pred_end,50000
 pred_precision,1000
-show_4b,true
-show_data,true
-show_legends,true
-show_preds,true
+show_4b,1
+show_data,1
+show_legends,1
+show_preds,1
 target,0
