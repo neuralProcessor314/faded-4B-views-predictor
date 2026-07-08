@@ -13,7 +13,7 @@ while True:
     elif cmd[0] == 'predict':
         subprocess.run(["py", "fit.py"])
     elif cmd[0] == 'show':
-        subprocess.run(["py", "visualize.py"])
+        subprocess.run(["py", "show.py"])
 
     elif cmd[0] == 'get':
         configs = pd.read_csv("configs.csv", index_col=0) # index_col=0 makes the func read the first column as indexes.
