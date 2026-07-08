@@ -111,7 +111,7 @@ If you wish to use the default value set inside the code, simply set the desired
 
 format:
 |<None>|value|
-|--------|-----------|
+|------|-----|
 |name1|value1|
 |...|...|
 note that the names are *indexes*, not entries.
@@ -122,7 +122,7 @@ You may have seen this folder attributed in some of the codes. Inside there is t
 ### usages.csv
 usages.csv includes the contents that *help* or *?* will output. It has the following format:
 |<None>|.|
-|--------|-----------|
+|------|---|
 |func1|desc1|
 |...|...|
 note that the function names are *indexes*, not entries.
