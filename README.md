@@ -72,7 +72,9 @@ f4vp-cli.py hosts the CLI. The CLI currently supports the following commands:
 <dt>fit</dt>
 <dd>run fit.py to fit the function to the data.</dd>
 <dt>show</dt>
-<dd>run visualize.py to show a plot of the data and the preds.</dd>
+<dd>run show.py(previously visualize.py) to show a plot of the data and the preds.</dd>
+<dt>predict</dt>
+<dd>run predict.py to calculate the time that Faded will hit 4B views.
 <dt>get</dt>
 <dd>show the value of a configuration entry. if unspecified show all.</dd>
 <dt>set</dt>
@@ -85,13 +87,45 @@ f4vp-cli.py hosts the CLI. The CLI currently supports the following commands:
 
 ### configs.csv
 configs.csv is where all the settings live. Initially intended to incorporate arguments to set values such as the max iterations for curve_fit, but I couldn't figure out a way to start a python process while inputting something there, so I decided to go for a separate configurations file. It includes the following configuration options:
-TBA
+<dl>
+<dt>max_iters</dt>
+<dd>maximum # of iterations during fitting.</dd>
+<dt>pred_start</dt>
+<dd>(minutes) start of prediction scope.</dd>
+<dt>pred_end</dt>
+<dd>(minutes) end of prediction scope.</dd>
+<dt>pred_precision</dt>
+<dd>number of divisions of the prediction scope. It is NOT the number of points, but the number of FRAGMENTS i.e. np.linspace(pred_start, pred_end, pred_precision+1) will be run.</dd>
+<dt>show_4b</dt>
+<dd>(NOT YET FUNCTIONAL) whether or not to show the 4 billion views target in the plot.</dd>
+<dt>show_data</dt>
+<dd>(NOT YET FUNCTIONAL) whether or not to show the datapoints in the plot.</dd>
+<dt>show_legends</dt>
+<dd>(NOT YET FUNCTIONAL) whether or not to show the legends in the plot.</dd>
+<dt>show_preds</dt>
+<dd>(NOT YET FUNCTIONAL) whether or not to show the prediction graph in the plot.</dd>
+<dt>target</dt>
+<dd>(NOT YET FUNCTIONAL) the target viewcount.</dd>
+</dl>
+If you wish to use the default value set inside the code, simply set the desired config value to 0.
+
+format:
+|<None>|value|
+|--------|-----------|
+|name1|value1|
+|...|...|
+note that the names are *indexes*, not entries.
 
 ### do_not_push
 You may have seen this folder attributed in some of the codes. Inside there is the API information including client secret, etc. As it should not be leaked online, the content is stored locally in the developer's computer, and the folder is included in .gitignore.
 
 ### usages.csv
-usages.csv includes the contents that *help* or *?* will output.
+usages.csv includes the contents that *help* or *?* will output. It has the following format:
+|<None>|.|
+|--------|-----------|
+|func1|desc1|
+|...|...|
+note that the function names are *indexes*, not entries.
 
 ## Dependencies
 - googleapiclient
