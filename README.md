@@ -137,6 +137,7 @@ note that the function names are *indexes*, not entries.
 - pandas
 - scipy.optimize
 - subprocess
+- datetime
 
 ## References
 - [Google Sheets API Docs](https://developers.google.com/workspace/sheets/api/guides/concepts)
@@ -149,5 +150,6 @@ note that the function names are *indexes*, not entries.
 - [Pandas User Guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/)
 - [Using Matplotlib](https://matplotlib.org/stable/users/index.html)
 - [YouTube Data API](https://developers.google.com/youtube/v3/)
+- [](https://note.nkmk.me/en/python-nan-usage/)
 - ...and many Stack Overflow answers of course.
 

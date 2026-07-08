@@ -31,7 +31,13 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 
+import datetime
+
+
 SCOPES = ["https://www.googleapis.com/auth/youtube.readonly"]
+
+ref_datetime = datetime.datetime.fromisoformat('2026-06-10 18:00:00.000')
+save_dir = "data/raw_data.csv"
 
 def main():
     creds = None
@@ -64,8 +70,15 @@ def main():
         id="60ItHLz5WEA"
     )
 
+    print("Fetching.")
     response = request.execute()
-    print(int(response['items'][0]['statistics']['viewCount']))
+
+    viewcount = int(response['items'][0]['statistics']['viewCount'])
+    delta = int((datetime.datetime.now() - ref_datetime).total_seconds() // 60)
+
+    raw_data = open(save_dir, mode='a')
+    raw_data.write(str(delta)+','+str(viewcount))
+    print("Saved new entry at " + save_dir + '.')
 
 if __name__ == "__main__":
     main()

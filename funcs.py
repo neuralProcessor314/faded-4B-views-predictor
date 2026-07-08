@@ -21,30 +21,29 @@ def pred_func(x, a1, a2, a3, a4, b1, b2): # the prediction model
 
 def load_data():
     raw_data = pd.read_csv("data/raw_data.csv")
-    time_d = raw_data.iloc[:, 0]
-    time_h = raw_data.iloc[:, 1]
-    time_m = raw_data.iloc[:, 2]
-    views = raw_data.iloc[:, 3]
+    time_tot = raw_data.iloc[:, 0]
+    views = raw_data.iloc[:, 1]
 
-    return raw_data, time_d, time_h, time_m, views
+    return raw_data, time_tot, views
 
 def load_cfgs():
     return pd.read_csv("configs.csv", index_col=0) # index_col=0 makes the func read the first column as indexes.
 
-def loadnset_cfgs(names, types): # load the csvs, then 
+def loadnset_cfgs(names, types): # load the csvs, then
     cfgs_file = pd.read_csv("configs.csv", index_col=0)
     cfgs_default_file = pd.read_csv("configs_default.csv", index_col=0)
     values = []
 
     for i in range(len(names)):
-        if cfgs_file.loc[names[i], "values"] == '': # if empty, fallback to the default values.
-            value = cfgs_default_file.loc[names[i], "values"]
+        if cfgs_file.loc[names[i], "value"] == float('nan'): # if empty, fallback to the default values.
+            value = cfgs_file.loc[names[i], "value"]
         else: # otherwise override the defaults.
-            value = cfgs_file.loc[names[i], "values"]
+            value = cfgs_default_file.loc[names[i], "value"]
 
         if types[i] == 'bool': # convert value type
             value = bool(value)
         elif types[0] == 'int':
+            # print(value.dtype)
             value = int(value)
         values.append(value)
 

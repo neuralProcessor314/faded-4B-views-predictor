@@ -1,5 +1,6 @@
 import subprocess
 import pandas as pd
+import time
 
 print("faded-4B-views-predictor. Type ? <none_or_command> or help <none_or_command> for usage help.")
 while True:
@@ -29,6 +30,13 @@ while True:
         configs.loc[cfg_name, "value"] = cfg_val
         print(configs.loc[cfg_name, "value"])
         configs.to_csv("configs.csv")
+
+    elif cmd[0] == 'start':
+        starttime = time.time() - 900
+        while True:
+            if time.time() - starttime >= 900: # 15 mins
+                subprocess.run(["py", "fetch.py"])
+                starttime = time.time()
 
     elif cmd[0] == '?' or  cmd[0] == 'help':
         usages = pd.read_csv("usages.csv", index_col=0) # load the usage helps file.

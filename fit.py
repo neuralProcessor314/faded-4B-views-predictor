@@ -1,20 +1,21 @@
 import pandas as pd
 from scipy import optimize # originally used 'from scipy.optimize import curve_fit' but the official guidelines says
                            # to import like this
-from funcs import pred_func, load_data, load_cfgs, to_mins
+from funcs import pred_func, load_data, load_cfgs, to_mins, loadnset_cfgs
 
 save_dir = "params/pred_params.csv"
 
 # DATA PREPROCESSING
 print("Loading and processing data.")
-raw_data, time_d, time_h, time_m, views = load_data()
-time_d -= 10 # this line
-time_h -= 18 # and this line calibrates the data so that it becomes the relative time to June 10, 2026 18:00.
-time_tot = to_mins(time_d, time_h, time_m)
+raw_data, time_tot, views = load_data()
+
+# for i in range(66):
+#     print(time_tot.iloc[i], ',', views.iloc[i])
+# code used to manually convert the datetime format of raw_data.csv
 
 # LOADING CONFIGURATIONS.
 print("Loading configurations.")
-max_iters = loadnset_cfgs(['max_iters'], ['ints'])
+max_iters = loadnset_cfgs(['max_iters'], ['int'])[0]
 
 # FITTING AND SAVING
 print("Fitting.")

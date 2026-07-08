@@ -13,10 +13,7 @@ show_4b, show_data, show_legends, show_preds = loadnset_data(['show_4b', 'show_d
                                                              ['bool', 'bool', 'bool', 'bool'])
 
 print("Loading and preprocessing data.")
-raw_data, time_d, time_h, time_m, views = load_data()
-time_d -= 10 # this line
-time_h -= 18 # and this line calibrates the data so that it becomes the relative time to June 10, 2026 18:00.
-time_tot = to_mins(time_d, time_h, time_m)
+raw_data, time_tot, views = load_data()
 
 # PREPPING PRED FUNC PLOT
 x_space = np.linspace(min(time_tot), max(time_tot), 5000) # linear x data for drawing the predicted func
