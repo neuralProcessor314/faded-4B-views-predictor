@@ -1,0 +1,10 @@
+,value
+max_iters,500
+pred_start,0
+pred_end,50000
+pred_precision,5000
+show_4b,1
+show_data,1
+show_legends,1
+show_preds,1
+target,4e9

@@ -1,20 +1,16 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from funcs import to_mins, pred_func, load_data, load_cfgs
-
-# INITIALIZING
-print("Initializing.")
-cfgs = load_cfgs()
-show_4b = bool(cfgs.loc["show_4b", "value"])
-show_data = bool(cfgs.loc["show_data", "value"])
-show_legends = bool(cfgs.loc["show_legends", "value"])
-show_preds = bool(cfgs.loc["show_preds", "value"])
+from funcs import to_mins, pred_func, loadnset_data, load_cfgs
 
 # LOADING
 print("Loading params.")
 params = pd.read_csv("params/pred_params.csv")
 [a1p, a2p, a3p, a4p, b1p, b2p] = [params.iloc[i, 1] for i in range(6)] # 'p' after variable names stand for 'predicted'.
+
+print("Loading configurations.")
+show_4b, show_data, show_legends, show_preds = loadnset_data(['show_4b', 'show_data', 'show_legends', 'show_preds'],
+                                                             ['bool', 'bool', 'bool', 'bool'])
 
 print("Loading and preprocessing data.")
 raw_data, time_d, time_h, time_m, views = load_data()

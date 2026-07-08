@@ -30,3 +30,22 @@ def load_data():
 
 def load_cfgs():
     return pd.read_csv("configs.csv", index_col=0) # index_col=0 makes the func read the first column as indexes.
+
+def loadnset_cfgs(names, types): # load the csvs, then 
+    cfgs_file = pd.read_csv("configs.csv", index_col=0)
+    cfgs_default_file = pd.read_csv("configs_default.csv", index_col=0)
+    values = []
+
+    for i in range(len(names)):
+        if cfgs_file.loc[names[i], "values"] == '': # if empty, fallback to the default values.
+            value = cfgs_default_file.loc[names[i], "values"]
+        else: # otherwise override the defaults.
+            value = cfgs_file.loc[names[i], "values"]
+
+        if types[i] == 'bool': # convert value type
+            value = bool(value)
+        elif types[0] == 'int':
+            value = int(value)
+        values.append(value)
+
+    return values

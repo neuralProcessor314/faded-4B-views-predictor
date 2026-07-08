@@ -1,23 +1,16 @@
 import pandas as pd
 import numpy as np
-from funcs import pred_func, to_dhm, load_cfgs
+from funcs import pred_func, to_dhm, loadnset_cfgs
 
 # LOADING
 print("Loading params.")
 params = pd.read_csv("params/pred_params.csv")
 [a1p, a2p, a3p, a4p, b1p, b2p] = [params.iloc[i, 1] for i in range(6)] # 'p' after variable names stand for 'predicted'.
 
-# INITIALIZING
-print('Initialzing.')
-cfgs = load_cfgs()
-pred_precision = int(cfgs.loc["pred_precision", "value"])
-pred_start = int(cfgs.loc["pred_start", "value"])
-pred_end = int(cfgs.loc["pred_end", "value"])
+print('Loading configurations.')
+pred_precision, pred_start, pred_end = loadnset_cfgs(['pred_start', 'pred_end', 'pred_precision'], ['int', 'int', 'int'])
 
-if pred_precision == 0:
-    pred_precision = 5000 # divide linear space equally by this much fragments.
-
-x = np.linspace(pred_start,pred_end,pred_precision+1)
+x = np.linspace(pred_start,pred_end,pred_precision+1) # divide linear space equally by pred_precision fragments.
 
 # PREDICTING
 print('Predicting.')

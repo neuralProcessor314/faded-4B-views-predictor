@@ -12,10 +12,9 @@ time_d -= 10 # this line
 time_h -= 18 # and this line calibrates the data so that it becomes the relative time to June 10, 2026 18:00.
 time_tot = to_mins(time_d, time_h, time_m)
 
-# LOADING CFGS
+# LOADING CONFIGURATIONS.
 print("Loading configurations.")
-max_iters = int(load_cfgs().loc["max_iters", "value"])
-if max_iters == 0: max_iters = 500
+max_iters = loadnset_cfgs(['max_iters'], ['ints'])
 
 # FITTING AND SAVING
 print("Fitting.")
