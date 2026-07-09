@@ -77,7 +77,7 @@ def main():
     delta = int((datetime.datetime.now() - ref_datetime).total_seconds() // 60)
 
     raw_data = open(save_dir, mode='a')
-    raw_data.write(str(delta)+','+str(viewcount))
+    raw_data.write(str(delta)+','+str(viewcount)+'\n')
     print("Saved new entry at " + save_dir + '.')
 
 if __name__ == "__main__":
