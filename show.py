@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from funcs import to_mins, pred_func, loadnset_data, load_cfgs
+from funcs import to_mins, pred_func, loadnset_cfgs, load_cfgs, load_data
 
 # LOADING
 print("Loading params.")
@@ -9,7 +9,7 @@ params = pd.read_csv("params/pred_params.csv")
 [a1p, a2p, a3p, a4p, b1p, b2p] = [params.iloc[i, 1] for i in range(6)] # 'p' after variable names stand for 'predicted'.
 
 print("Loading configurations.")
-show_4b, show_data, show_legends, show_preds = loadnset_data(['show_4b', 'show_data', 'show_legends', 'show_preds'],
+show_4b, show_data, show_legends, show_preds = loadnset_cfgs(['show_4b', 'show_data', 'show_legends', 'show_preds'],
                                                              ['bool', 'bool', 'bool', 'bool'])
 
 print("Loading and preprocessing data.")

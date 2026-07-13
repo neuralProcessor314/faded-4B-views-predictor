@@ -48,9 +48,10 @@ def main():
     print("Checking for credentials.")
     if os.path.exists("do_not_push/token.json"):
         creds = Credentials.from_authorized_user_file("do_not_push/token.json", SCOPES)
-
+        print('Valid credentials found.')
     # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
+    if not creds:
+        print('No valid credentials available. Opening log-in prompt.')
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:

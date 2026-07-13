@@ -23,7 +23,7 @@ def load_data():
     raw_data = pd.read_csv("data/raw_data.csv")
     time_tot = raw_data.iloc[:, 0]
     views = raw_data.iloc[:, 1]
-
+    # print(time_tot)
     return raw_data, time_tot, views
 
 def load_cfgs():
@@ -35,11 +35,14 @@ def loadnset_cfgs(names, types): # load the csvs, then
     values = []
 
     for i in range(len(names)):
-        if cfgs_file.loc[names[i], "value"] == float('nan'): # if empty, fallback to the default values.
-            value = cfgs_file.loc[names[i], "value"]
-        else: # otherwise override the defaults.
+        if cfgs_file.loc[names[i], "value"] == float('NaN'): # if empty, fallback to the default values.
             value = cfgs_default_file.loc[names[i], "value"]
-
+            print('not custom')
+        else: # otherwise override the defaults.
+            value = cfgs_file.loc[names[i], "value"]
+            print(cfgs_file.loc[names[i], :])
+            print('custom')
+        print(value)
         if types[i] == 'bool': # convert value type
             value = bool(value)
         elif types[0] == 'int':
